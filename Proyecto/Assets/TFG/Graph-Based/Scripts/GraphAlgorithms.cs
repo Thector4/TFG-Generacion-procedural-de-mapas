@@ -8,17 +8,8 @@ using Random = UnityEngine.Random;
 
 public class GraphAlgorithms : MonoBehaviour
 {
-    /// <summary>
-    /// Handles gui controls, runs before node layout
-    /// </summary>
-    /*
-     * Compara cada habitación conectada con todas las no conectadas para hallar la que esté a menor distancia, añade cada habitación
-     * a las connectedRooms y mueve la habitación recién conectada de unconnected a connected
-    */
-
     private float distance = 0;
     public bool forceGridAlignment = false;
-
 
     public void ConnectRoomsWithPrim(List<DungeonGenerator.Room> rooms)
     {
@@ -63,8 +54,6 @@ public class GraphAlgorithms : MonoBehaviour
                 unconnected.Remove(closestUnconnected);
             }
         }
-
-
     }
 
     /***************************************************************************/
@@ -181,12 +170,7 @@ public class GraphAlgorithms : MonoBehaviour
         }
     }
 
-
-
-
-
     /***************************************************************************/
-
 
     public class MinHeap<T>
     {
@@ -239,7 +223,6 @@ public class GraphAlgorithms : MonoBehaviour
         }
     }
 
-
     public float GetConnectionCost(DungeonGenerator.Room a, DungeonGenerator.Room b)
     {
         float baseDist = Vector2.Distance(a.position, b.position);
@@ -254,6 +237,4 @@ public class GraphAlgorithms : MonoBehaviour
 
         return baseDist;
     }
-
-
 }
